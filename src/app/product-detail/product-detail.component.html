@@ -1,4 +1,26 @@
 <div>
-  <p> {{productTitle}}</p>
+  <nz-card nzTitle={{product.title}} [nzExtra]="extraTpl" class="nz-card">
+    <img src="http://placehold.it/800x200">
+    <h5>{{product.price}}</h5>
+    <h4>
+      <a [routerLink]="['/product',product.title]">{{product.title}}</a>
+    </h4>
+    <p>{{product.desc}}</p>
+    <div>
+      <app-stars [rating]="product.rating"></app-stars>
+    </div>
+  </nz-card>
+
+  <nz-list [nzDataSource]="comments" [nzRenderItem]="item">
+    <ng-template #item let-i>
+      <nz-list-item>
+        <nz-list-item-meta [nzTitle]="i.user" [nzDescription]="i.content">
+        </nz-list-item-meta>
+        <div>
+          <app-stars [rating]="product.rating"></app-stars>
+        </div>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
 
 </div>

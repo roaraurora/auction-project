@@ -2,8 +2,8 @@
   <div nz-col nzSpan="24">
     <form nz-form>
       <nz-form-item>
-        <nz-form-control [nzSpan]="24">
-          <input type="text" nz-input name="search" placeholder="search light">
+        <nz-form-control nzSpan="24">
+          <input  [formControl]="titleFilter" type="text" nz-input name="search" placeholder="search light">
         </nz-form-control>
       </nz-form-item>
     </form>
@@ -12,11 +12,11 @@
 
 <div>
   <div nz-row></div>
-  <div nz-col *ngFor="let product of products" nzSpan="8">
+  <div nz-col *ngFor="let product of products | filter:'title':keyword" nzSpan="8">
     <nz-card nzTitle="标题" [nzExtra]="extraTpl" class="nz-card">
       <h5>{{product.price}}</h5>
       <h4>
-        <a [routerLink]="['/product',product.title]">{{product.title}}</a>
+        <a [routerLink]="['/product',product.id]">{{product.title}}</a>
       </h4>
       <p>{{product.desc}}</p>
       <div>

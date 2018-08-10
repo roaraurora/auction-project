@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 
 import { registerLocaleData } from '@angular/common';
@@ -17,13 +17,13 @@ import { CarouselComponent } from './carousel/carousel.component';
 
 import { Routes, RouterModule } from '../../node_modules/@angular/router';
 import { HoemComponent } from './hoem/hoem.component';
-
-registerLocaleData(zh);
+import { ProductService } from './shared/product.service';
+import { FilterPipe } from './pipe/filter.pipe';
 
 registerLocaleData(zh);
 const routeConfig: Routes = [
   { path: '', component: HoemComponent },
-  { path: 'product/:productTitle', component: ProductDetailComponent }
+  { path: 'product/:productId', component: ProductDetailComponent }
 ];
 
 @NgModule({
@@ -35,7 +35,8 @@ const routeConfig: Routes = [
     SearchComponent,
     StarsComponent,
     CarouselComponent,
-    HoemComponent
+    HoemComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -44,8 +45,9 @@ const routeConfig: Routes = [
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
     RouterModule.forRoot(routeConfig),
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
