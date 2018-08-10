@@ -1,0 +1,32 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <form nz-form>
+      <nz-form-item>
+        <nz-form-control [nzSpan]="24">
+          <input type="text" nz-input name="search" placeholder="search light">
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div nz-row></div>
+  <div nz-col *ngFor="let product of products" nzSpan="8">
+    <nz-card nzTitle="标题" [nzExtra]="extraTpl" class="nz-card">
+      <h5>{{product.price}}</h5>
+      <h4>
+        <a [routerLink]="['/product',product.title]">{{product.title}}</a>
+      </h4>
+      <p>{{product.desc}}</p>
+      <div>
+        <app-stars  [rating]="product.rating"></app-stars>
+      </div>
+    </nz-card>
+
+  </div>
+</div>
+
+<ng-template #extraTemplate>
+  <a href="">More</a>
+</ng-template>

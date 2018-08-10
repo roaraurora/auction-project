@@ -1,0 +1,24 @@
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu [nzTheme]="'light'" [nzMode]="'horizontal'" style="line-height: 64px;">
+      <li nz-menu-item>nav 1</li>
+      <li nz-menu-item>nav 2</li>
+      <li nz-menu-item>nav 3</li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <app-search></app-search>
+      </div>
+      <div nz-col nzSpan="16">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </nz-content>
+  <nz-footer>
+    <hr>
+    <p>footer</p>
+  </nz-footer>
+</nz-layout>

@@ -1,0 +1,43 @@
+<form nz-form>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzFor="productTitle">商品名称</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input type="text" nz-input name="productTitle" id="productTitle" placeholder="productTitle">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzFor="productPrice">商品价格</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+      <input type="text" nz-input name="productPrice" id="productPrice" placeholder="productPrice">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzFor="productCategory">商品类别</nz-form-label>
+    <nz-form-control>
+      <nz-dropdown>
+        <a nz-dropdown>
+          选择一个类别
+          <i class="anticon anticon-down"></i>
+        </a>
+        <ul nz-menu nzSelectable>
+          <li nz-menu-item>
+            <p>shit happens kiddo</p>
+          </li>
+          <li nz-menu-item>
+            <a>2nd menu item</a>
+          </li>
+        </ul>
+      </nz-dropdown>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <!-- <nz-form-label [nzSpan]="8" nzFor="submit"></nz-form-label> -->
+    <nz-form-control>
+      <button nz-button class="search-button" [nzType]="'primary'">search</button>
+    </nz-form-control>
+  </nz-form-item>
+
+</form>
