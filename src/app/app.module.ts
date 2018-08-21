@@ -19,6 +19,7 @@ import { Routes, RouterModule } from '../../node_modules/@angular/router';
 import { HoemComponent } from './hoem/hoem.component';
 import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
+import { ReativeRegistComponent } from './reative-regist/reative-regist.component';
 
 registerLocaleData(zh);
 const routeConfig: Routes = [
@@ -36,7 +37,8 @@ const routeConfig: Routes = [
     StarsComponent,
     CarouselComponent,
     HoemComponent,
-    FilterPipe
+    FilterPipe,
+    ReativeRegistComponent
   ],
   imports: [
     BrowserModule,

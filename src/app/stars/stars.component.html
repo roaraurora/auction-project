@@ -1,1 +1,1 @@
-<i class="anticon anticon-star" *ngFor="let star of stars" [class.anticon-star-o]="star"></i>
+<i (click)="clickStar(i)" class="anticon anticon-star" *ngFor="let star of stars;let i=index;" [class.anticon-star-o]="star"></i>

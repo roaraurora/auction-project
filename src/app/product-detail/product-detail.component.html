@@ -11,6 +11,18 @@
     </div>
   </nz-card>
 
+  <div>
+    <div>
+      <app-stars [rating]="newRating" [readOnly]="false"></app-stars>
+    </div>
+    <div>
+      <textarea [(ngModel)]="newComment"></textarea>
+    </div>
+    <div>
+      <button nz-button nzType="primary" class="btn" (click)="addComment()">提交</button>
+    </div>
+  </div>
+
   <nz-list [nzDataSource]="comments" [nzRenderItem]="item">
     <ng-template #item let-i>
       <nz-list-item>

@@ -1,5 +1,11 @@
 <nz-carousel [nzEffect]="effect" [nzDots]="true" nzAutoPlay>
-  <div nz-carousel-content *ngFor="let item of array, let i=index">
+  <!-- <div nz-carousel-content *ngFor="let item of array, let i=index">
+    <img src="http://placehold.it/200x300" >
+    <p>test_by_roar</p>
     kiddo,{{i}},{{item}}
-  </div>
+  </div> -->
+
+  <img src="http://placehold.it/200x300" nz-carousel-content *ngFor="let item of array, let i=index">
+
 </nz-carousel>
+<!-- <img src="http://placehold.it/200x300" > -->

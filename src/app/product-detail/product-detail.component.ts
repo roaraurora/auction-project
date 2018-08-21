@@ -14,8 +14,10 @@ export class ProductDetailComponent implements OnInit {
 
   public comments: Comment[];
 
+  newRating = 5;
+  newComment = '';
+
   constructor(private routeInfo: ActivatedRoute, private productService: ProductService) {
-    console.log('roaaaaaaaaaaaaaaaaaaaar');
   }
 
   ngOnInit() {
@@ -24,4 +26,9 @@ export class ProductDetailComponent implements OnInit {
     this.comments = this.productService.getCommentForProductId(id);
   }
 
+  addComment() {
+    console.log('damn');
+    const comment = new Comment(0, this.product.id, new Date().toISOString(), 'anymous', this.newRating, this.newComment);
+    this.comments.unshift(comment);
+  }
 }
